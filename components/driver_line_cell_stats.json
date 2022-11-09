@@ -3,6 +3,7 @@
     "PaddingLeft": 12,
     "PaddingRight": 4,
     "Background": "{BackgroundDefault}",
+    "RenderIf" : true,
     "ColorizeBackground": {
         "Enabled": false,
         "Color": "{P1Foreground}",
@@ -63,7 +64,13 @@
             "Condition": "{RenderWilliamsTheme}",
             "Property": "Background",
             "Value": "{WilliamsSecondaryBG}"
+        },
+        {
+            "Condition" : "{Statistics.Header, Converter=StringEquals, Parameter=Top battles}",
+            "Property" : "RenderIf",
+            "Value" : false
         }
+        
     ],
     "Items": [
         //left part
@@ -89,7 +96,6 @@
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Mercedes}",
                             "Setters" :
                             [
-
                                 {
                                     "Property" : "FontName",
                                     "Value" : "{F1NumbersMercedes-Bold}"
@@ -105,7 +111,6 @@
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Williams}",
                             "Setters" :
                             [
-
                                 {
                                     "Property" : "FontName",
                                     "Value" : "{F1NumbersWilliams}"
@@ -120,7 +125,6 @@
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Ferrari}",
                             "Setters" :
                             [
-
                                 {
                                     "Property" : "FontName",
                                     "Value" : "{F1NumbersFerrari}"
@@ -135,7 +139,6 @@
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alfa Romeo}",
                             "Setters" :
                             [
-
                                 {
                                     "Property" : "FontName",
                                     "Value" : "{F1NumbersAlfaRomeo}"
@@ -150,7 +153,6 @@
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=McLaren}",
                             "Setters" :
                             [
-
                                 {
                                     "Property" : "FontName",
                                     "Value" : "{F1NumbersMcLaren}"
@@ -165,7 +167,6 @@
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
                             "Setters" :
                             [
-
                                 {
                                     "Property" : "FontName",
                                     "Value" : "{F1NumbersAlphaTauri}"
@@ -210,14 +211,13 @@
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Alpine}",
                             "Setters" :
                             [
-
                                 {
                                     "Property" : "FontName",
                                     "Value" : "{F1NumbersAlpine-Bold}"
                                 },
                                 {
                                     "Property" : "FontSize",
-                                    "Value" : "85"
+                                    "Value" : "80"
                                 },
                             ]
                         },
@@ -225,7 +225,6 @@
                             "Condition": "{Item.Team.Name, Converter=StringEquals, Parameter=Red Bull}",
                             "Setters" :
                             [
-
                                 {
                                     "Property" : "FontName",
                                     "Value" : "{F1NumbersRedbull}"
@@ -265,9 +264,7 @@
                                   //  "Value" : "{P3Foreground}"
                                 //}
                             //]
-                        //},
-
-                        
+                        //},                        
                     ],
                     "RenderIf": "{RenderDriverNumbers}",
 
@@ -317,7 +314,7 @@
                         //},
                         {
                             "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
-                            "ConditionAnd": "{RenderDNFColors}",
+                            "ConditionAnd": "{RenderDNFText}",
                             "Property": "Foreground",
                             "Value": "{DNFText}"
                         },
@@ -333,6 +330,8 @@
                             "Property": "Foreground",
                             "Value": "{DNFText}"
                         },
+                        
+                        
                     ]
 
                 },
@@ -382,8 +381,8 @@
             ]
         },
 
-        //right part
-        {
+         //right part
+         {
             "BlockType": "stack",
             "Height": "*",
             "MarginLeft": 82,

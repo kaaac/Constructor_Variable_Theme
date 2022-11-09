@@ -883,7 +883,7 @@
                             "WidthStretch": true,
                             "Template": {
                                 "BlockType": "component",
-                                "ComponentName": "driver_line_cell"
+                                "ComponentName": "driver_line_cell_stats"
                             }
                         },
 
